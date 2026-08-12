@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
-  <meta name="theme-color" content="#0876c9" />
+  <meta name="theme-color" content="#061f3b" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="پنالتی خانوادگی" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="assets/ball.svg" />
-  <title>پنالتی خانوادگی PRO | بابا علی × سپنتا</title>
+  <title>پنالتی خانوادگی PRO V3 | بابا علی × سپنتا</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -18,65 +18,38 @@
       <div class="hero-card">
         <img src="assets/splash.png" alt="خانواده در زمین فوتبال" class="splash" />
         <div class="hero-overlay">
+          <div class="v3-chip">V3 • CINEMATIC</div>
           <h1>پنالتی خانوادگی PRO</h1>
           <p>بابا علی × سپنتا</p>
         </div>
       </div>
-
       <div class="card">
         <h2>حالت بازی</h2>
         <div class="mode-grid">
-          <button class="mode-btn selected" data-mode="pro">
-            <strong>⚡ حرفه‌ای</strong>
-            <span>قدرت، زاویه، ارتفاع، کات و واکنش دروازه‌بان</span>
-          </button>
-          <button class="mode-btn" data-mode="fun">
-            <strong>🎉 فان</strong>
-            <span>ساده‌تر و مناسب بازی سریع خانوادگی</span>
-          </button>
+          <button class="mode-btn selected" data-mode="pro"><strong>⚡ حرفه‌ای</strong><span>قدرت، زاویه، ارتفاع، کات و واکنش دروازه‌بان</span></button>
+          <button class="mode-btn" data-mode="fun"><strong>🎉 فان</strong><span>ساده‌تر و مناسب بازی سریع خانوادگی</span></button>
         </div>
       </div>
-
       <div class="card">
         <h2>من کدام بازیکنم؟</h2>
         <div class="role-grid">
-          <button class="role-btn" data-role="baba">
-            <img src="assets/baba-ali.png" alt="بابا علی" />
-            <strong>بابا علی</strong><span>تیم ملی ایران 🇮🇷</span>
-          </button>
-          <button class="role-btn" data-role="sepanta">
-            <img src="assets/sepanta.png" alt="سپنتا" />
-            <strong>سپنتا</strong><span>پرتغال، شماره ۷ 🇵🇹</span>
-          </button>
+          <button class="role-btn" data-role="baba"><img src="assets/baba-ali.png" alt="بابا علی" /><strong>بابا علی</strong><span>تیم ملی ایران 🇮🇷</span></button>
+          <button class="role-btn" data-role="sepanta"><img src="assets/sepanta.png" alt="سپنتا" /><strong>سپنتا</strong><span>پرتغال، شماره ۷ 🇵🇹</span></button>
         </div>
         <p id="role-hint" class="hint">اول بازیکن خودت را انتخاب کن.</p>
-        <div class="action-grid">
-          <button id="create-room" class="primary" disabled>ساخت اتاق</button>
-          <button id="join-room" class="secondary" disabled>ورود با کد</button>
-        </div>
+        <div class="action-grid"><button id="create-room" class="primary" disabled>ساخت اتاق</button><button id="join-room" class="secondary" disabled>ورود با کد</button></div>
         <button id="demo-mode" class="ghost" disabled>تست روی همین گوشی</button>
       </div>
     </section>
 
     <section id="screen-room" class="screen">
       <div class="card center">
-        <div class="status-dot"></div>
-        <h2 id="room-title">اتاق بازی</h2>
+        <div class="status-dot"></div><h2 id="room-title">اتاق بازی</h2>
         <div id="room-mode" class="room-mode">حالت حرفه‌ای ⚡</div>
-        <div id="room-code-wrap" class="code-wrap">
-          <span>کد اتاق</span><strong id="room-code">----</strong>
-          <button id="copy-code" class="tiny">کپی</button>
-        </div>
-        <div id="join-wrap" class="join-wrap hidden">
-          <label for="join-code">کد ۴ رقمی را وارد کن</label>
-          <input id="join-code" inputmode="numeric" maxlength="4" placeholder="مثلاً 7284" />
-          <button id="confirm-join" class="primary">وصل شو</button>
-        </div>
+        <div id="room-code-wrap" class="code-wrap"><span>کد اتاق</span><strong id="room-code">----</strong><button id="copy-code" class="tiny">کپی</button></div>
+        <div id="join-wrap" class="join-wrap hidden"><label for="join-code">کد ۴ رقمی را وارد کن</label><input id="join-code" inputmode="numeric" maxlength="4" placeholder="مثلاً 7284" /><button id="confirm-join" class="primary">وصل شو</button></div>
         <p id="room-status">در حال آماده‌سازی…</p>
-        <div class="players-ready">
-          <div><span>بابا علی</span><b id="ready-baba">○</b></div>
-          <div><span>سپنتا</span><b id="ready-sepanta">○</b></div>
-        </div>
+        <div class="players-ready"><div><span>بابا علی</span><b id="ready-baba">○</b></div><div><span>سپنتا</span><b id="ready-sepanta">○</b></div></div>
         <button id="leave-room" class="ghost">برگشت</button>
       </div>
     </section>
@@ -88,17 +61,36 @@
         <div class="player-score green"><span>سپنتا</span><b id="score-sepanta">0</b><div id="dots-sepanta" class="shot-dots"></div></div>
       </header>
 
-      <div class="stadium" id="stadium">
+      <div class="cinema-stage" id="stadium">
+        <div class="stadium-lights"></div>
+        <div class="crowd-layer"></div>
+        <div class="camera-vignette"></div>
         <div id="confetti" class="confetti"></div>
-        <div class="goal" id="goal"><div class="net"></div>
-          <div id="keeper" class="character keeper">
+
+        <div class="family-stand family-left" id="spectator-mom" aria-label="مامان در حال تماشا">
+          <div class="spectator-frame"><img src="assets/splash.png" alt="مامان" /></div>
+          <span class="spectator-name">مامان</span>
+        </div>
+        <div class="family-stand family-right" id="spectator-daughter" aria-label="دختر خانواده در حال تماشا">
+          <div class="spectator-frame"><img src="assets/splash.png" alt="دختر خانواده" /></div>
+          <span class="spectator-name">تشویق!</span>
+        </div>
+
+        <div class="goal-wrap" id="goal">
+          <div class="goal-shadow"></div>
+          <div class="goal-frame"><div class="net" id="net"></div></div>
+          <div id="keeper" class="actor keeper" data-state="idle">
+            <div class="actor-shadow"></div>
             <img id="keeper-img" src="assets/baba-ali.png" alt="دروازه‌بان" />
           </div>
         </div>
-        <div id="shooter" class="character shooter">
+
+        <div class="penalty-spot"></div>
+        <div id="shooter" class="actor shooter" data-state="idle">
+          <div class="actor-shadow"></div>
           <img id="shooter-img" src="assets/sepanta.png" alt="شوت‌زن" />
         </div>
-        <div id="ball" class="ball">⚽</div>
+        <img id="ball" class="ball" src="assets/ball.svg" alt="توپ" draggable="false" />
 
         <div id="pro-hud" class="pro-hud hidden">
           <div><span>قدرت</span><b id="power-value">—</b><i><u id="power-bar"></u></i></div>
@@ -109,38 +101,27 @@
         <div id="aim-guide" class="aim-guide">توپ را رو به دروازه سوایپ کن</div>
         <div id="keeper-controls" class="keeper-controls hidden">
           <button data-zone="TL">↖</button><button data-zone="TC">↑</button><button data-zone="TR">↗</button>
-          <button data-zone="BL">↙</button><button data-zone="BC">↓</button><button data-zone="BR">↘</button>
+          <button data-zone="BL">↙</button><button data-zone="BC">●</button><button data-zone="BR">↘</button>
           <small id="keeper-hint">جهت شیرجه را انتخاب کن</small>
         </div>
         <div id="waiting" class="waiting hidden">منتظر حرکت حریف…</div>
         <div id="callout" class="callout hidden"></div>
       </div>
 
-      <footer class="game-footer">
-        <span id="my-role-label"></span>
-        <button id="sound-toggle" class="tiny">🔊 صدا روشن</button>
-        <button id="quit-game" class="tiny danger">خروج</button>
-      </footer>
+      <footer class="game-footer"><span id="my-role-label"></span><button id="sound-toggle" class="tiny">🔊 صدا روشن</button><button id="quit-game" class="tiny danger">خروج</button></footer>
     </section>
 
     <section id="screen-result" class="screen result-screen">
       <div id="result-confetti" class="result-confetti"></div>
-      <div class="winner-card">
-        <h1>🏆 برنده!</h1>
-        <img id="winner-img" src="assets/sepanta.png" alt="برنده" />
-        <h2 id="winner-name">سپنتا</h2>
-        <p id="final-score">0 - 0</p>
-        <button id="play-again" class="primary">بازی دوباره</button>
-        <button id="home-btn" class="ghost">صفحه اول</button>
-      </div>
+      <div class="winner-card"><h1>🏆 برنده!</h1><img id="winner-img" src="assets/sepanta.png" alt="برنده" /><h2 id="winner-name">سپنتا</h2><p id="final-score">0 - 0</p><button id="play-again" class="primary">بازی دوباره</button><button id="home-btn" class="ghost">صفحه اول</button></div>
     </section>
   </main>
 
   <audio id="kick-sfx" preload="auto" src="assets/kick.wav"></audio>
   <audio id="goal-sfx" preload="auto" src="assets/goal.wav"></audio>
   <audio id="save-sfx" preload="auto" src="assets/save.wav"></audio>
-
   <script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"></script>
+  <script src="match-v3.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
